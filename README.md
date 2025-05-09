@@ -1,7 +1,7 @@
-# Reward Points Service
+# Reward Points Calculator
 
 ## Overview
-The Reward Points Service is a Spring Boot application that calculates reward points for customers based on their transactions. Customers earn points for every dollar spent over $50, with additional points for amounts over $100. The service provides endpoints to retrieve reward points for individual customers as well as all customers within a specified date range.
+The Reward Points Calculator is a Spring Boot application that calculates reward points for customers based on their transactions. Customers earn points for every dollar spent over $50, with additional points for amounts over $100. The service provides endpoints to retrieve reward points for individual customers as well as all customers within a specified date range.
 
 ## Project Structure
 It looks like the formatting of your project structure in the `README.md` file got altered. To ensure it displays correctly, you can use Markdown code blocks to preserve the structure. Here's how you can format it:
@@ -9,31 +9,31 @@ It looks like the formatting of your project structure in the `README.md` file g
 ```markdown
 # Project Structure
 
-reward-points-service
+RewardPointsCalculator
 │
 ├── src
 │   ├── main
 │   │   ├── java
-│   │   │   └── com.charter.rewardpointsservice
+│   │   │   └── com.retailer.rewardpoints
 │   │   │       ├── RewardPointsServiceApplication.java
 │   │   │       ├── controller
-│   │   │       │    └── RewardController.java
-│   │   │       ├── dao
+│   │   │       │    └── RewardPointsController.java
+│   │   │       ├── repo
 │   │   │       │    └── TransactionRepository.java
 │   │   │       ├── dto
 │   │   │       │    └── Customer.java
 │   │   │       ├── service
-│   │   │       │    ├── RewardPointsService.java
-│   │   │       │    └── RewardServiceImpl.java
+│   │   │       │    ├── RewardPointService.java
+│   │   │       │    └── RewardPonitServiceImpl.java
 │   ├── resources
 │   │   └── application.properties
 │   ├── test
 │   │   ├── java
-│   │   │   └── com.charter.rewardpointsservice
+│   │   │   └── com.retailer.rewardpoints
 │   │   │       ├── controller
-│   │   │       │    └── RewardControllerTest.java
+│   │   │       │    └── RewardPointControllerTest.java
 │   │   │       ├── service
-│   │   │       │    └── RewardServiceImplTest.java
+│   │   │       │    └── RewardPointServiceImplTest.java
 │   ├── static
 │   ├── templates
 │
@@ -45,12 +45,12 @@ The project is organized into the following packages:
 - **controller**: Contains the REST controllers that handle HTTP requests and responses.
 - **service**: Defines the service interfaces.
 - **serviceImpl**: Implements the service interfaces.
-- **dao**: Contains the repository interfaces for database access.
-- **model**: Defines the data models used in the application.
+- **repo**: Contains the repository interfaces for database access.
+- **entity**: Defines the data models used in the application.
 
 ## Implementation Details
 
-### RewardController
+### RewardPointController
 The `RewardController` class provides endpoints to get reward points for a specific customer or all customers within a date range.
 
 - **Endpoints**:
@@ -59,13 +59,13 @@ The `RewardController` class provides endpoints to get reward points for a speci
 - **Methods**:
   - `getRewardPoints`: Validates and adjusts the date range, calculates reward points for a specific customer, and returns the result.
 
-### RewardService
-The `RewardService` interface defines methods for calculating reward points.
+### RewardPointService
+The `RewardPointService` interface defines methods for calculating reward points.
 
 - **Methods**:
   - `getRewardPoints`: Validates and adjusts the date range, calculates reward points for a specific customer, and returns the result.
 
-### RewardServiceImpl
+### RewardPointServiceImpl
 The `RewardServiceImpl` class implements the `RewardService` interface.
 
 - **Methods**:
@@ -101,9 +101,9 @@ The `RewardControllerTest` class contains unit tests for the `RewardController` 
 
 ### Running the Application
 1. Clone the repository:
-   git clone https://github.com/Anusha2196/reward-points-service.git
+   git clone https://github.com/sabinab-81/RewardsPoints.git
 2. Navigate to the project directory:
-   cd reward-points-service
+   cd rewardpoints
 3. Build the project:
    mvn clean install
 4. Run the application:

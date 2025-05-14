@@ -38,20 +38,13 @@ public class RewardPointsController {
 	public ResponseEntity<ResponseDto> getRewardPoints(@PathVariable Long customerId,
 			@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
 			@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
-		ResponseDto responseDto = new ResponseDto();
-
-		try {
-
+		
 			RewardPointsDto points = rewardService.getRewardPoints(customerId, startDate, endDate);
-
-			responseDto.setRewardPointsDto(points);
-			responseDto.setStatus("success");
-
-		} catch (Exception e) {
-			responseDto.setStatus("failed");
-			responseDto.setError(e.getMessage());
-		}
-
-		return ResponseEntity.ok(responseDto);
+			
+			 ResponseDto responseDto = new ResponseDto();
+			    responseDto.setRewardPointsDto(points);
+			    responseDto.setStatus("success");
+		
+		     return ResponseEntity.ok(responseDto);
 	}
 }
